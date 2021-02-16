@@ -4,3 +4,20 @@
  * This is a general purpose Gradle build.
  * Learn more about Gradle by exploring our samples at https://docs.gradle.org/6.8.2/samples
  */
+plugins {
+    war
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation("jakarta.platform:jakarta.jakartaee-api:9.0.0")
+}
+
+
+
+
+
+
