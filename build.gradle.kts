@@ -13,10 +13,18 @@ repositories {
 }
 
 dependencies {
-    implementation("jakarta.platform:jakarta.jakartaee-api:9.0.0")
+    implementation("jakarta.platform:jakarta.jakartaee-api:8.0.0")
 }
 
+java {
+    version = JavaVersion.VERSION_11
+}
 
+tasks.create<Copy>("deploy") {
+    dependsOn("build")
+    from("$buildDir/libs")
+    into("/usr/local/opt/preview-server/standalone/deployments")
+}
 
 
 
